@@ -42,3 +42,33 @@ function sum(arr){
 }
 
 console.log("Sum of Array" , sum([1,2,3,4,5]));
+
+function sL(arr){
+    let largest = -Infinity;
+    let second = -Infinity;
+    
+    for(let num of arr){
+        if(num > largest){
+            second = largest;
+            largest = num;
+        }else if(num > second && num < largest){
+            second = num;
+        }
+    }
+    return second;
+}
+
+console.log(sL([2,3,4,5,56,6]));
+
+
+function rD(arr){
+    let unique = [];
+    for(let num of arr){
+        if(!unique.includes(num)){
+            unique.push(num);
+        }
+    }
+    return unique;
+}
+
+console.log(rD([1,2,4,5,5,6]));
