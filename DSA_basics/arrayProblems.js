@@ -61,14 +61,38 @@ function sL(arr){
 console.log(sL([2,3,4,5,56,6]));
 
 
-function rD(arr){
-    let unique = [];
-    for(let num of arr){
-        if(!unique.includes(num)){
-            unique.push(num);
+// function rD(arr){
+//     let unique = [];
+//     for(let num of arr){
+//         if(!unique.includes(num)){
+//             unique.push(num);
+//         }
+//     }
+//     return unique;
+// }
+
+// console.log(rD([1,2,4,5,5,6]));
+
+
+function removeDuplicate(arr){
+    const seen = {};
+    const unique = [];
+    let uniqueIndex = 0;
+
+    for(let i = 0; i<arr.length; i++){
+        let current = arr[i];
+
+        if(!seen[current]){
+            seen[current] = true;
+            unique[uniqueIndex] = current;
+            uniqueIndex++;
         }
     }
-    return unique;
-}
 
-console.log(rD([1,2,4,5,5,6]));
+    return unique;
+} 
+
+console.log(removeDuplicate([1,1,2,3,4,5,5,6]));
+
+
+
