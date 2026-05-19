@@ -59,3 +59,16 @@ console.log(evaluate("sum")(4)(2));
 console.log(evaluate("sub")(4)(2));
 console.log(evaluate("mul")(4)(2));
 console.log(evaluate("div")(4)(2));
+
+
+
+/// for infinit params
+
+function add(a){
+    return function(b){
+        if(b) return add(a + b);
+        return a;
+    }
+}
+
+console.log(add(1)(2)(3)(4)(5)());
